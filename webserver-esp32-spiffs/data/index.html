@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="scr/jquery-3.3.1.min.js"></script>
+    <script src="scr/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="scr/bootstrap.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+      <div class="container-fluid">
+        <a href="/index.html" class="navbar-brand mr-3">AWLR & AWS System</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav">
+            <a href="/index.html" class="nav-item nav-link active">Home</a>
+            <a href="/about.html" class="nav-item nav-link">About</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Date</h4>
+              <h2 class="card-text">
+              <span id="date">%DATE%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Time</h4>
+              <h2 class="card-text">
+              <span id="time">%TIME%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <form>
+            <div class="form-group">
+              <label for="apikey">
+                <h4>API Key</h4>
+              </label>
+              <input type="text" class="form-control" id="apikey" aria-describedby="emailHelp" placeholder="Enter API Key">
+            </div>
+            <p><a href="/submit"><button type="submit" class="btn btn-primary">Submit</button></a></p>
+          </form>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Sending Test</h4>
+              <p class="card-text">
+              <h6>Button for sending to server</h6>
+              </p>
+              <p><a href="/send"><button type="button" class="btn btn-info">Send</button></a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Temp Sensor</h4>
+              <p class="card-text">
+              <h6>HDC1080 for Out Sensor</h6>
+              </p>
+              <p><a href="/hdc"><button type="button" class="btn btn-success" data-toggle="button" aria-pressed="false" autocomplete="off">HDC1080 ON</button></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Battery Voltage (V)</h4>
+              <h2 class="card-text">
+              <span id="battery">%BAT%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Signal</h4>
+              <h2 class="card-text">
+              <span id="signal">%SIG%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Irradiance (W/m2)</h4>
+              <h2 class="card-text">
+              <span id="irradiance">%IRR%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Air Pressure (hPa)</h4>
+              <h2 class="card-text">
+              <span id="pressure">%PRE%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Temp In (&#8451;)</h4>
+              <h2 class="card-text">
+              <span id="temperatureIn">%TIN%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Humidity In (&#37;)</h4>
+              <h2 class="card-text">
+              <span id="humidityIn">%HIN%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Temp Out (&#8451;)</h4>
+              <h2 class="card-text">
+              <span id="temperatureOut">%TOU%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Humidity Out (&#37;)</h4>
+              <h2 class="card-text">
+              <span id="humidityOut">%HOU%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Rainfall (inch)</h4>
+              <h2 class="card-text">
+              <span id="rainfall">%RAI%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Wind Speed (miles/h)</h4>
+              <h2 class="card-text">
+              <span id="windspeed">%WSP%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Wind Direction</h4>
+              <h2 class="card-text">
+              <span id="winddirection">%WDI%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Ultrasonic 1 (cm)</h4>
+              <h2 class="card-text">
+              <span id="ultrasonic1">%UL1%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Ultrasonic 2 (cm)</h4>
+              <h2 class="card-text">
+              <span id="ultrasonic2">%UL2%</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <footer>
+        <div class="row">
+          <div class="col-md-6">
+            <p>Copyright &#169; 2020 2black0@gmail.com</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script>
+    setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("date").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/date", true);
+      xhttp.send();
+    }, 5000 ) ;
+    
+    setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("time").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/time", true);
+      xhttp.send();
+    }, 5000 ) ;
+    
+    setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("battery").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/battery", true);
+      xhttp.send();
+    }, 5000 ) ;
+    
+      setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("signal").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/signal", true);
+      xhttp.send();
+    }, 5000 ) ;
+    
+      setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("irradiance").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/irradiance", true);
+      xhttp.send();
+    }, 5000 ) ;
+    
+      setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("pressure").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/pressure", true);
+      xhttp.send();
+    }, 5000 ) ;
+
+      setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("temperatureIn").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/temperatureIn", true);
+      xhttp.send();
+    }, 5000 ) ;     
+
+      setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("humidityIn").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/humidityIn", true);
+      xhttp.send();
+    }, 5000 ) ;
+
+      setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("temperatureOut").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/temperatureOut", true);
+      xhttp.send();
+    }, 5000 ) ;
+
+      setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("humidityOut").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/humidityOut", true);
+      xhttp.send();
+    }, 5000 ) ;    
+
+      setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("rainfall").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/rainfall", true);
+      xhttp.send();
+    }, 5000 ) ;
+
+      setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("windspeed").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/windspeed", true);
+      xhttp.send();
+    }, 5000 ) ;    
+    
+      setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("winddirection").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/winddirection", true);
+      xhttp.send();
+    }, 5000 ) ;
+
+      setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("ultrasonic1").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/ultrasonic1", true);
+      xhttp.send();
+    }, 5000 ) ;
+
+      setInterval(function ( ) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("ultrasonic2").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "/ultrasonic2", true);
+      xhttp.send();
+    }, 5000 ) ;
+  </script>  
+</html>
