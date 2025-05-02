@@ -42,14 +42,14 @@ This project is designed to:
 │   │       └── jquery-3.3.1.min.js
 │   └── webserver-esp32-spiffs.ino
 
-````
+```
 
 ## ▶️ How to Use
 
 1. **Clone this repository**:
    ```bash
    git clone https://github.com/yourusername/arduino-hardware-tests.git
-````
+   ```
 
 2. **Open any sketch** using the Arduino IDE or PlatformIO.
 
