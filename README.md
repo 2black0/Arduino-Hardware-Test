@@ -48,7 +48,7 @@ This project is designed to:
 
 1. **Clone this repository**:
    ```bash
-   git clone [https://github.com/yourusername/arduino-hardware-tests](https://github.com/2black0/Arduino-Hardware-Test-Collection).git
+   git clone https://github.com/2black0/Arduino-Hardware-Test-Collection.git
    ```
 
 2. **Open any sketch** using the Arduino IDE or PlatformIO.
